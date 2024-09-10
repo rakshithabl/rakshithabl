@@ -1,0 +1,30 @@
+-- join
+-- create db my institute
+-- create table courses c_id and c_name
+-- 1 java, 2 python ,3 c
+-- create one more table students s_id s_name c_id
+-- 101 rak, 102 chan, 103 rs, 104 monisha
+show databases;
+create database my_institute;
+use my_institute;
+show tables;
+create table courses
+(c_id int primary key,
+c_name varchar(30)
+ );
+show tables;
+select * from courses;
+insert into courses values(1,"java"),(2,"python"),(3,"c");
+select * from courses;
+create table students
+(s_id int primary key,
+s_name varchar(20),
+c_id int);
+show tables;
+select * from students;
+insert into students values(101,"rak"),(102,"cham"),(103,"rs"),(104,"monisha");
+select * from students;
+select * from courses;
+-- inner join for common values
+select * from  courses inner join students
+on courses.c_id = students.c_id;
